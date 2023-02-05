@@ -2,24 +2,42 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 
-int main(int argc, char **argv)
+int main(void)
 {
-	int fd;
+	int fd[4];
 	char *buff;
 
-	if (argc == 2)
-	{
-		fd = open(argv[1], O_RDWR);
-		buff = get_next_line(fd);
-		printf("%d\n", fd);
 
-		printf("%s", buff);
-		
-	}
-	if (argc == 1)
-	{
-		printf("input a value");
+	fd[0] = open("files/multiple_line_with_nl", O_RDWR);
+	fd[1] = open("files/42_with_nl", O_RDWR);
+	fd[2] = open("files/43_with_nl", O_RDWR);
+	fd[3] = open("files/nl", O_RDWR);
 
-	}
+	buff = get_next_line(fd[0]);
+	printf("fd = %d\n", fd[0]);
+	printf("Buffer_size = %d\n", BUFFER_SIZE);
+	printf("result : %s\n\n", buff);
+
+	buff = get_next_line(fd[0]);
+	printf("fd = %d\n", fd[0]);
+	printf("Buffer_size = %d\n", BUFFER_SIZE);
+	printf("result : %s\n\n", buff);
+
+	buff = get_next_line(fd[0]);
+	printf("fd = %d\n", fd[0]);
+	printf("Buffer_size = %d\n", BUFFER_SIZE);
+	printf("result : %s\n\n", buff);
+
+	buff = get_next_line(fd[0]);
+	printf("fd = %d\n", fd[0]);
+	printf("Buffer_size = %d\n", BUFFER_SIZE);
+	printf("result : %s\n\n", buff);
+
+	buff = get_next_line(fd[0]);
+	printf("fd = %d\n", fd[0]);
+	printf("Buffer_size = %d\n", BUFFER_SIZE);
+	printf("result : %s\n\n", buff);
+
+
 	return (0);
 }
