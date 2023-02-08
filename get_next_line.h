@@ -6,7 +6,7 @@
 /*   By: rbutarbu <rbutarbu@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 23:33:19 by rbutarbu          #+#    #+#             */
-/*   Updated: 2023/02/05 22:54:38 by rbutarbu         ###   ########.fr       */
+/*   Updated: 2023/02/08 12:10:25 by rbutarbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <unistd.h>
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+#endif
+
 
 char	*get_next_line(int fd);
 char	*ft_strjoin(char const *s1, char const *s2);
